@@ -1,0 +1,19 @@
+{
+	"name": "HoloTube",
+	"description": "YouTubeをHololive仕様に変えます",
+	"version": "0.1",
+	"content_scripts": [
+		{
+			"js": ["content.js"],
+			"css": ["content.css"],
+			"matches": ["https://www.youtube.com/*"]
+		}
+	],
+	"web_accessible_resources": [
+		{
+			"resources": ["/images/*"],
+			"matches": ["https://www.youtube.com/*"]
+		}
+	],
+	"manifest_version": 3
+}
