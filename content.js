@@ -8,12 +8,14 @@ window.onload = function () {
   console.log(pageManager);
   var thumbnailsObserver = new MutationObserver(addClassToThumbnail);
   observer = new MutationObserver(function () {
+    console.log("observed mutation");
     const thumbnailContainer = document.querySelector(
       "ytd-rich-grid-renderer > .style-scope.ytd-rich-grid-renderer"
     );
     thumbnailsObserver.observe(thumbnailContainer, { childList: true });
     addClassToThumbnail();
   });
+  console.log(pageManager);
   observer.observe(pageManager, { childList: true });
   // container.onload = function() {
   // 	let thumbnailContainer = document.querySelector('ytd-rich-grid-row');
