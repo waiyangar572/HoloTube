@@ -71,7 +71,7 @@ function addMiniImage(str) {
 function addClassToThumbnail() {
   console.log("addClassToThumbnail");
   let thumbnails = document.querySelectorAll(
-    "ytd-thumbnail:not(.style-scope ytd-rich-grid-slim-media)"
+    "ytd-thumbnail:not(.ytd-rich-grid-slim-media)"
   );
   thumbnails.forEach((e, ind) => {
     if (!e.classList.contains("indexed-thumbnail")) {
