@@ -35,13 +35,21 @@ function addStyle(str) {
 
   sheet.insertRule(str, sheet.cssRules.length);
 }
+
+sidePeekImgURLs = ["images/nakiri_side_peek.png"];
+function getRandomSidePeekImgURL() {
+  const num = sidePeekImgURLs.length;
+  const randomInd = intRandom(0, num - 1);
+  return sidePeekImgURLs[randomInd];
+}
 function addMiniImage(str) {
-  const nakiri_1 = chrome.runtime.getURL('images/nakiri_side_peek.png');
+  const sidePeekImg = chrome.runtime.getURL(getRandomSidePeekImgURL());
+  // const nakiri_1 = chrome.runtime.getURL('images/nakiri_side_peek.png');
   const miniImage = `
     display: block;
     content: "";
     background-color: transparent;
-    background-image: url('${nakiri_1}');
+    background-image: url('${sidePeekImg}');
     background-size: contain;
     background-repeat: no-repeat;
     position: relative;
