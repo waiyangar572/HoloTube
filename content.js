@@ -9,9 +9,10 @@ window.onload = function () {
   var thumbnailsObserver = new MutationObserver(addClassToThumbnail);
   observer = new MutationObserver(function () {
     console.log("observed mutation");
-    const thumbnailContainer = document.querySelector(
-      "ytd-rich-grid-renderer > .style-scope.ytd-rich-grid-renderer"
-    );
+    // const thumbnailContainer = document.querySelector(
+    //   "ytd-rich-grid-renderer > .style-scope.ytd-rich-grid-renderer"
+    // );
+    const thumbnailContainer = document.querySelector('#contents')
     thumbnailsObserver.observe(thumbnailContainer, { childList: true });
     addClassToThumbnail();
   });
