@@ -1,5 +1,5 @@
 maxInd = 0;
-let  observer;
+let observer;
 
 window.onload = function () {
   let aaa = document.querySelector("#logo-icon svg.yt-icon");
@@ -12,7 +12,7 @@ window.onload = function () {
     // const thumbnailContainer = document.querySelector(
     //   "ytd-rich-grid-renderer > .style-scope.ytd-rich-grid-renderer"
     // );
-    const thumbnailContainer = document.querySelector('#contents')
+    const thumbnailContainer = document.querySelector("#contents");
     thumbnailsObserver.observe(thumbnailContainer, { childList: true });
     addClassToThumbnail();
   });
@@ -36,7 +36,13 @@ function addStyle(str) {
   sheet.insertRule(str, sheet.cssRules.length);
 }
 
-sidePeekImgURLs = ["images/nakiri_side_peek.png"];
+sidePeekImgURLs = [
+  "images/nakiri_side_peek.png",
+  "images/aqua_side_peek.png",
+  "images/choco_side_peek.png",
+  "images/shion_side_peek.png",
+  "images/subaru_side_peek.png",
+];
 function getRandomSidePeekImgURL() {
   const num = sidePeekImgURLs.length;
   const randomInd = intRandom(0, num - 1);
@@ -73,8 +79,8 @@ function addClassToThumbnail() {
       e.classList.add("indexed-thumbnail");
     }
   });
-  randoms = getRandoms(maxInd, maxInd+thumbnails.length, parseInt(thumbnails.length*0.1));
-  randoms.forEach((i) => (i!=1)?addMiniImage('.ytd-thumbnail'+i):()=>null);
+  randoms = getRandoms(maxInd, maxInd + thumbnails.length, parseInt(thumbnails.length * 0.1));
+  randoms.forEach((i) => (i != 1 ? addMiniImage(".ytd-thumbnail" + i) : () => null));
   console.log(randoms);
   maxInd += thumbnails.length;
 }
@@ -82,7 +88,7 @@ function addClassToThumbnail() {
 function getRandoms(min, max, length) {
   /** 重複チェック用配列 */
   var randoms = [];
-  length = (max - min > length)?length: (max-min)
+  length = max - min > length ? length : max - min;
 
   /** 重複チェックしながら乱数作成 */
   for (i = 1; i <= length; i++) {
