@@ -1,6 +1,8 @@
 maxInd = 0;
 let observer;
 
+let sidePeekFrequency = 0.2;
+
 window.onload = function () {
   let aaa = document.querySelector("#logo-icon svg.yt-icon");
   console.log(aaa);
@@ -79,7 +81,7 @@ function addClassToThumbnail() {
       e.classList.add("indexed-thumbnail");
     }
   });
-  randoms = getRandoms(maxInd, maxInd + thumbnails.length, parseInt(thumbnails.length * 0.1));
+  randoms = getRandoms(maxInd, maxInd + thumbnails.length, parseInt(thumbnails.length * sidePeekFrequency));
   randoms.forEach((i) => (i != 1 ? addMiniImage(".ytd-thumbnail" + i) : () => null));
   console.log(randoms);
   maxInd += thumbnails.length;
