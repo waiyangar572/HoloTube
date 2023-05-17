@@ -16,7 +16,7 @@
 	border-radius: 0 !important;
 }
 
-#logo-icon svg.yt-icon {
+#logo-icon yt-icon-shape {
 	background-image: url('chrome-extension://__MSG_@@extension_id__/images/logo_HoloTube.png');
 	background-size: contain;
 	background-repeat: no-repeat;
